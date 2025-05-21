@@ -1,0 +1,14 @@
+
+{
+  "1": {
+    "name": "Стандарт с видом на море",
+    "description": "Уютный номер с видом на море.",
+    "photos": ["/static/images/sea1.jpg", "/static/images/sea2.jpg"]
+  },
+  "2": {
+    "name": "Стандарт с видом на горы",
+    "description": "Комфортный номер с видом на горы.",
+    "photos": ["/static/images/mountain1.jpg", "/static/images/mountain2.jpg"]
+  }
+}
+

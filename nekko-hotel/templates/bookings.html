@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Список бронирований — NekkoHotel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-title" style="display: flex; align-items: center; gap: 10px;">
+      <img src="{{ url_for('static', filename='images/logo.webp') }}" class="logo" alt="Logo" />
+      <h1>NekkoHotel</h1>
+    </div>
+    <nav>
+      <a href="{{ url_for('index') }}">Главная</a>
+      <a href="{{ url_for('hotel_info') }}">Об отеле</a>
+      <a href="{{ url_for('bookings_list')}}">Мои бронирования</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align: center; margin-top: 20px;">Список всех бронирований</h2>
+    <div class="booking-list">
+      {% for booking in bookings %}
+        <div class="booking-card">
+          <img src="{{ booking[6] if booking[6] else url_for('static', filename='images/default-room.jpg') }}" alt="Фото номера" />
+          <p><strong>{{ booking[1] }}</strong></p>
+          <p>забронировал(а) номер <strong>{{ booking[3] }}</strong></p>
+          <p>с {{ booking[4] }} </p>
+        </div>
+      {% else %}
+        <p style="text-align:center;">Пока нет бронирований.</p>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>
+
